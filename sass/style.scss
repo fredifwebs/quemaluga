@@ -1,0 +1,183 @@
+/*==================================================RESET=====================================================*/
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border: none;
+	line-height:normal;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing:antialiased;
+}
+/*========================FONT-FACE==============================*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+/*========================FUNCOES==============================*/
+@mixin model($width,$height){
+	width: $width;
+	height:$height;
+}
+/*========================VARIAVEIS==============================*/
+/*FONTES*/
+$Open:'Open Sans';
+
+/*CORES*/
+$Branco: #ffffff;
+$Preto: #000000;
+$PretoFosco: #2e2e2e;
+$Laranja: #e2982f;
+$Azul: #233a62;
+$AzulClaro: #00b4da;
+$CinzaClaro: #dddddd;
+$CinzaMedio: #cccccc;
+/*=========================COMUNS=================================*/
+.clear{
+	clear:both;
+}
+.content{
+	width:1100px;
+	margin:0 auto;
+}
+.hide{
+	display:none !important;
+}
+
+/*==================================================HEADER=====================================================*/
+header{
+	@include model(100%,60px);
+	background-color:$Laranja;
+	display:block;
+}
+.top{
+	@include model(1100px,60px);
+	margin:0 auto;
+}
+.logo-header{
+	width:320px;
+	height:59px;
+	float:left;
+}
+.menu-topo{
+	font-family:$Open;
+	color:$Branco;
+	ul{
+		float: right;
+		@include model(320px,60px);
+	}
+	li{
+		display:inline;
+		height: 60px;
+		line-height: 60px;
+		padding:0 15px;
+		background:url(../images/border-nav.png) left center no-repeat;
+	}
+	a{
+		color: $Branco;
+		font-family: $Open;
+		font-size: 14px;
+	}
+}
+.border-nav a::after{
+	background-color:$Branco;
+	display:block;
+	@include model(1px,15px);
+}
+.submenu-topo{
+	@include model(100%,20px);
+	background-color:$Azul;
+	position: relative;
+	li{
+		display: inline;
+		height: 20px;
+		line-height: 20px;
+		padding:0 20px;
+		background:url(../images/border-nav.png) left center no-repeat;
+	}
+	a{
+		color: $Branco;
+		font-family: $Open;
+		font-size: 14px;
+		font-weight:normal;
+	}
+}
+.submenu-content{
+	@include model(1100px,310px);
+	display:block;
+	background-color: $CinzaClaro;
+	overflow-y:auto;
+	margin:0 auto;
+	position:absolute;
+
+}
+.sub-content-categorias{
+	width:950px;
+	padding:20px 25px;
+	li{
+		@include model(210px,270px);
+		border-right:1px solid $CinzaMedio;
+		display: inline-block;
+		padding-right:15px;
+		overflow: hidden;
+	}
+}
+.sub-content-categorias-box{
+	@include model(165px,105px);
+	display:block;
+	clear:both;
+	padding:0 0 40px 0;
+	position: relative;
+	left:20px;
+	h1{
+		font-size: 12px;
+		text-transform: uppercase;
+		font-family: $Open;
+	}
+	li{
+		display: block;
+		height: 16px;
+		line-height: 16px;
+		font-family: $Open;
+		font-size: 12px;
+	}
+	a{
+		color: $PretoFosco;
+		&:hover{color: $AzulClaro;}
+	}
+}
+.link-menu-active{
+	a{color:$AzulClaro;}
+}
+/*=============================================HOME BANNER======================================*/
+.home-banner{
+	@include model(100%,600px);
+	display:block;
+	background:url(../images/bg_banner.jpg) center top no-repeat;
+}
+/*=============================================HOME SOBRE======================================*/
+.home-sobre{
+	@include model(100%,800px);
+	display:block;
+}
+/*=============================================HOME CATEGORIAS======================================*/
+/*=============================================HOME ANUNCIOS======================================*/
