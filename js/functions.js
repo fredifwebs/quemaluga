@@ -18,4 +18,18 @@ $(document).ready(function() {
 
     /*PARALLAX*/
     $.stellar();
+    
+    /*EXIBIR CATEGORIAS*/
+	$('.exibir').click(function() {
+		$('.hide1').removeClass('hide1', 1000);
+		$('.exibir').addClass('hide1');
+	});
+	
+//	Scrolled by user interaction
+	$('.foo2').carouFredSel({
+		//auto: true,
+		prev: '.prev',
+		next: '.next',
+		pauseOnHover: true
+	});
 });

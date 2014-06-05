@@ -8,6 +8,9 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing:antialiased;
 }
+ol, ul, li, form ol {
+	list-style: none;
+}
 /*========================FONT-FACE==============================*/
 @font-face {
   font-family: 'Open Sans';
@@ -49,8 +52,10 @@ $PretoFosco: #2e2e2e;
 $Laranja: #e2982f;
 $Azul: #233a62;
 $AzulClaro: #00b4da;
+$AzulMedio: #24324e;
 $CinzaClaro: #dddddd;
 $CinzaMedio: #cccccc;
+$CinzaEscuro: #383838;
 /*=========================COMUNS=================================*/
 .clear{
 	clear:both;
@@ -62,7 +67,15 @@ $CinzaMedio: #cccccc;
 .hide{
 	display:none !important;
 }
-
+.hide1{
+	display:none !important;
+}
+hr{
+	@include model(1050px,1px);
+	background: url(../images/h.png)no-repeat center top;
+	margin:0px auto;
+	margin-top: 20px;
+}
 /*==================================================HEADER=====================================================*/
 header{
 	@include model(100%,60px);
@@ -95,7 +108,7 @@ header{
 	a{
 		color: $Branco;
 		font-family: $Open;
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
 .border-nav a::after{
@@ -117,7 +130,7 @@ header{
 	a{
 		color: $Branco;
 		font-family: $Open;
-		font-size: 14px;
+		font-size: 15px;
 		font-weight:normal;
 	}
 }
@@ -128,7 +141,7 @@ header{
 	overflow-y:auto;
 	margin:0 auto;
 	position:absolute;
-
+	z-index:99999;
 }
 .sub-content-categorias{
 	width:950px;
@@ -158,11 +171,12 @@ header{
 		height: 16px;
 		line-height: 16px;
 		font-family: $Open;
-		font-size: 12px;
+		font-size: 15px;
 	}
 	a{
 		color: $PretoFosco;
 		&:hover{color: $AzulClaro;}
+		-webkit-font-smoothing:antialiased;
 	}
 }
 .link-menu-active{
@@ -174,10 +188,186 @@ header{
 	display:block;
 	background:url(../images/bg_banner.jpg) center top no-repeat;
 }
+.home-formulario{
+	@include model(551px,263px);	
+	display: block;
+	position: relative;
+	float: right;
+	top: 220px;
+	p{text-shadow: 2px 2px 2px $PretoFosco; color:$Branco; font-size:20px; }
+	.oque{
+		@include model(538px,37px);  
+	    background:url(../images/lupa.png)no-repeat 95% 75% $Branco;
+	    border:1px solid #dedede;
+	    padding:4px;
+	    margin-bottom: 10px;
+	    font-size:0.9em;
+	    color:#3a3a3a;
+	    -moz-border-radius:100px;
+	    -webkit-border-radius:100px;
+	    border-radius:100px;
+	    &:focus{border:1px solid #97d6eb;}
+	}
+	.onde{
+		@include model(538px,37px);  
+	    background:url(../images/lugar.png)no-repeat 95% 75% $Branco;
+	    border:1px solid #dedede;
+	    padding:4px;
+	    margin-bottom: 10px;
+	    font-size:0.9em;
+	    color:#3a3a3a;
+	    -moz-border-radius:100px;
+	    -webkit-border-radius:100px;
+	    border-radius:100px;
+	    &:focus{border:1px solid #97d6eb;}
+	}
+	.submit{
+		@include model(202px,47px);  
+		float:right;
+	    padding: 9px 15px;  
+	    background: $Laranja;  
+	    border: 0;  
+	    font-size: 14px;  
+	    color: #FFFFFF;  
+	    -webkit-border-radius: 100px;  
+	    -moz-border-radius: 100px;  
+	     border-radius:100px;
+	}
+}
 /*=============================================HOME SOBRE======================================*/
 .home-sobre{
-	@include model(100%,800px);
+	@include model(100%,auto);
 	display:block;
+	background:url(../images/sobreback.jpg) center top no-repeat;
+	h1{
+		font-family:$Open;
+		font-weight:bold;
+		color:$Branco;
+		text-align: center;
+		font-size: 60px;
+	}
+	ul.ul-home-sobre{
+		@include model(1102px,208px);
+		margin-top: 30px;
+	}
+	li{
+		@include model(294px,207px);
+		display: inline-block;
+		margin-left: 80px;
+		&:first-child{margin-left:0px;}
+	}
+	p{
+		font-family:$Open;
+		font-weight:bold;
+		font-size:13px;
+		color:$Branco;
+	}
 }
 /*=============================================HOME CATEGORIAS======================================*/
+.home-categorias{
+	@include model(100%,auto);
+	display:block;
+	h1{
+		font-family:$Open;
+		font-weight:bold;
+		color:$Laranja;
+		text-align: center;
+		font-size: 60px;
+	}
+	.exibir{
+		@include model(166px,28px);
+		background: url(../images/btn-exibir-mais.png)no-repeat;
+		display:block;
+		margin:0px auto;
+		margin-top:30px;
+		cursor: pointer;
+		border: none;
+	}
+	article{
+		@include model(232px,auto);
+		display:inline-block;
+		margin: 10px 0px 0px 30px;
+		.a_letras{
+			@include model(34px,103px);
+			font-family:$Open;
+			font-weight:bold;
+			font-size:30px;
+			text-transform:uppercase;
+			color:$Laranja;
+			float:left;
+		}
+		.listagem{
+			@include model(194px,auto);
+			float: right;
+		}
+		a{
+			font-family:$Open;
+			font-weight: 400;
+			font-size:16px;
+			color:$CinzaEscuro;
+			&:hover{background:$CinzaMedio;}
+		}
+	}
+}
+
 /*=============================================HOME ANUNCIOS======================================*/
+.home-anuncios{
+	@include model(100%,auto);
+	h1{
+		font-family:$Open;
+		font-weight:bold;
+		color:$Laranja;
+		text-align: center;
+		font-size: 60px;
+	}
+	.banner{
+		margin: 0px auto;
+		display: block;
+		margin-bottom: 50px;
+	}
+	.c-home-anuncios{
+		@include model(1160px,185px);
+		margin: 0px auto;
+	}
+	.s_esq{
+		@include model(35px,64px);
+		padding-top: 50px;
+		float: left;
+	}
+	.c_cont{
+		@include model(1084px,164px);
+		overflow:hidden;
+		float: left;
+		li{
+			display:inline-block;
+			margin-left: 50px;
+		}
+	}
+	.s_dir{
+		@include model(35px,64px);
+		padding-top: 50px;
+		float: right;
+	}
+}
+/*=============================================FOOTER======================================*/
+footer{
+	@include model(100%,auto);
+	background: $Azul;
+	.logofooter{
+		float:left;
+		margin-top: 10px;
+	}
+	ul{
+		@include model(117px,auto);
+		float:left;
+		margin: 10px;
+		p{font-family:$Open;font-weight:bold;color:$Laranja;}
+		a{font-family:$Open;color:$Branco;}
+	}
+}
+.p_footer{
+	@include model(100%,54px);
+	background: $AzulMedio;
+	p{font-family:$Open;color:$Branco;float: left;margin-top: 20px;}
+	img{float: right;}
+}
