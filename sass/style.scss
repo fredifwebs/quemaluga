@@ -194,10 +194,10 @@ header{
 	position: relative;
 	float: right;
 	top: 220px;
-	p{text-shadow: 2px 2px 2px $PretoFosco; color:$Branco; font-size:20px; }
+	p{text-shadow: 2px 2px 2px $PretoFosco; color:$Branco; font-size:20px; font-family: $Open;}
 	.oque{
 		@include model(538px,37px);  
-	    background:url(../images/lupa.png)no-repeat 95% 75% $Branco;
+	    background:url(../images/lupa.png)no-repeat 97% 50% $Branco;
 	    border:1px solid #dedede;
 	    padding:4px;
 	    margin-bottom: 10px;
@@ -205,12 +205,13 @@ header{
 	    color:#3a3a3a;
 	    -moz-border-radius:100px;
 	    -webkit-border-radius:100px;
+	    -webkit-appearance:none;
 	    border-radius:100px;
-	    &:focus{border:1px solid #97d6eb;}
+	    text-indent: 20px;
 	}
 	.onde{
 		@include model(538px,37px);  
-	    background:url(../images/lugar.png)no-repeat 95% 75% $Branco;
+	    background:url(../images/lugar.png)no-repeat 97% 50% $Branco;
 	    border:1px solid #dedede;
 	    padding:4px;
 	    margin-bottom: 10px;
@@ -218,8 +219,9 @@ header{
 	    color:#3a3a3a;
 	    -moz-border-radius:100px;
 	    -webkit-border-radius:100px;
+	    -webkit-appearance:none;
 	    border-radius:100px;
-	    &:focus{border:1px solid #97d6eb;}
+	   text-indent: 20px;
 	}
 	.submit{
 		@include model(202px,47px);  
@@ -232,6 +234,7 @@ header{
 	    -webkit-border-radius: 100px;  
 	    -moz-border-radius: 100px;  
 	     border-radius:100px;
+	     cursor: pointer;
 	}
 }
 /*=============================================HOME SOBRE======================================*/
